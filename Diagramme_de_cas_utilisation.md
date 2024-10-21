@@ -1,5 +1,3 @@
-# Diagramme de Cas d'Utilisation
-
 graph TB
     %% Actors as person symbols
     actor Utilisateur as "Utilisateur"
