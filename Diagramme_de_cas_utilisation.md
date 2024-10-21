@@ -1,31 +1,29 @@
-graph TB
-    %% Actors as person symbols
-    actor Utilisateur as "Utilisateur"
-    actor Administrateur as "Administrateur"
+#j'ai utilisé le siteweb suivant planttext
 
-    %% Use cases for Utilisateur
-    subgraph "Fonctions Utilisateur"
-        U1[Réserver un vol]
-        U2[Consulter ses réservations]
-        U3[Effectuer un paiement]
-    end
+@startuml
+skinparam backgroundColor #f7f7f7
+skinparam class {
+    BackgroundColor<<actor>> #FFDDC1
+    BorderColor<<actor>> #FF851B
+    BackgroundColor<<system>> #D1E8FF
+    BorderColor<<system>> #2C82C9
+    ArrowColor #333
+}
 
-    %% Use cases for Administrateur
-    subgraph "Fonctions Administrateur"
-        A1[Gérer les vols]
-        A2[Gérer les avions]
-        A3[Gérer les passagers]
-        A4[Gérer les équipages]
-        A5[Gérer les aéroports]
-    end
+actor Utilisateur <<actor>> #FFDDC1
+actor Administrateur <<actor>> #FFDDC1
 
-    %% Relationships between Actors and Use Cases
-    Utilisateur --> U1
-    Utilisateur --> U2
-    Utilisateur --> U3
+rectangle "Système" <<system>> {
+    Utilisateur --> (Réserver un vol)
+    Utilisateur --> (Consulter ses réservations)
+    Utilisateur --> (Effectuer un paiement)
+    Utilisateur --> (S'authentifier)
 
-    Administrateur --> A1
-    Administrateur --> A2
-    Administrateur --> A3
-    Administrateur --> A4
-    Administrateur --> A5
+    Administrateur --> (Gérer les vols)
+    Administrateur --> (Gérer les avions)
+    Administrateur --> (Gérer les passagers)
+    Administrateur --> (Gérer les équipages)
+    Administrateur --> (Gérer les aéroports)
+    Administrateur --> (S'authentifier)
+}
+@enduml
