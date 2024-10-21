@@ -1,27 +1,28 @@
 # Diagramme de Cas d'Utilisation
 
 ```mermaid
-graph TD
+graph TB
     subgraph Utilisateur
-        A1[Réserver un vol]
-        A2[Consulter ses réservations]
-        A3[Effectuer un paiement]
+        U1[Réserver un vol]
+        U2[Consulter ses réservations]
+        U3[Effectuer un paiement]
     end
 
     subgraph Administrateur
-        B1[Gérer les vols]
-        B2[Gérer les avions]
-        B3[Gérer les passagers]
-        B4[Gérer les équipages]
-        B5[Gérer les aéroports]
+        A1[Gérer les vols]
+        A2[Gérer les avions]
+        A3[Gérer les passagers]
+        A4[Gérer les équipages]
+        A5[Gérer les aéroports]
     end
 
-    Utilisateur -->|1..*| A1
-    Utilisateur -->|0..*| A2
-    Utilisateur -->|1| A3
+    %% Relationships between Actors and Use Cases
+    Utilisateur -->|1..*| U1
+    Utilisateur -->|0..*| U2
+    Utilisateur -->|1| U3
 
-    Administrateur -->|1| B1
-    Administrateur -->|1| B2
-    Administrateur -->|1| B3
-    Administrateur -->|1| B4
-    Administrateur -->|1| B5
+    Administrateur -->|1| A1
+    Administrateur -->|1| A2
+    Administrateur -->|1| A3
+    Administrateur -->|1| A4
+    Administrateur -->|1| A5
