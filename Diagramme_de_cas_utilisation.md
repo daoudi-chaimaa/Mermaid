@@ -1,14 +1,19 @@
 # Diagramme de Cas d'Utilisation
 
-```mermaid
 graph TB
-    subgraph Utilisateur
+    %% Actors as person symbols
+    actor Utilisateur as "Utilisateur"
+    actor Administrateur as "Administrateur"
+
+    %% Use cases for Utilisateur
+    subgraph "Fonctions Utilisateur"
         U1[Réserver un vol]
         U2[Consulter ses réservations]
         U3[Effectuer un paiement]
     end
 
-    subgraph Administrateur
+    %% Use cases for Administrateur
+    subgraph "Fonctions Administrateur"
         A1[Gérer les vols]
         A2[Gérer les avions]
         A3[Gérer les passagers]
@@ -17,12 +22,12 @@ graph TB
     end
 
     %% Relationships between Actors and Use Cases
-    Utilisateur -->|1..*| U1
-    Utilisateur -->|0..*| U2
-    Utilisateur -->|1| U3
+    Utilisateur --> U1
+    Utilisateur --> U2
+    Utilisateur --> U3
 
-    Administrateur -->|1| A1
-    Administrateur -->|1| A2
-    Administrateur -->|1| A3
-    Administrateur -->|1| A4
-    Administrateur -->|1| A5
+    Administrateur --> A1
+    Administrateur --> A2
+    Administrateur --> A3
+    Administrateur --> A4
+    Administrateur --> A5
